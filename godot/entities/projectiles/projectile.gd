@@ -1,6 +1,8 @@
 class_name Projectile
 extends Area2D
 
+var lifetime: float = 5.0
+
 @export_group("Movement")
 @export_range(0.0, 2000.0, 5.0, "or_greater") var speed: float = 600.0
 
@@ -21,7 +23,12 @@ var faction: Enums.Faction:
 var dir: Vector2 = Vector2.ZERO
 
 func _ready() -> void:
-	pass
+	if lifetime > 0.0:
+		$LifetimeTimer.wait_time = lifetime
+		$LifetimeTimer.start()
 
 func _process(delta: float) -> void:
 	position += dir * speed * delta
+
+func _on_lifetime_timer_timeout() -> void:
+	queue_free()

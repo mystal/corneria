@@ -14,3 +14,9 @@ polygon = PackedVector2Array(-5, -5, 5, -5, 5, 5, -5, 5)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_xpc6v")
 debug_color = Color(0.875, 0.788, 0.549, 0.42)
+
+[node name="LifetimeTimer" type="Timer" parent="."]
+process_callback = 0
+one_shot = true
+
+[connection signal="timeout" from="LifetimeTimer" to="." method="_on_lifetime_timer_timeout"]

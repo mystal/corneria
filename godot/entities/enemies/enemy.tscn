@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://bqmhpckf5nna4"]
+
+[ext_resource type="Script" path="res://entities/enemies/enemy.gd" id="1_i10bu"]
+[ext_resource type="PackedScene" uid="uid://c87otpe6316rq" path="res://entities/projectiles/projectile.tscn" id="2_41rlg"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_k4dri"]
+
+[node name="Enemy" type="CharacterBody2D"]
+motion_mode = 1
+script = ExtResource("1_i10bu")
+projectile_scene = ExtResource("2_41rlg")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+position = Vector2(0, -4.5)
+scale = Vector2(1, 0.775)
+color = Color(1, 0.244134, 0.149635, 1)
+polygon = PackedVector2Array(0, -20, 20, 20, -20, 20)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_k4dri")

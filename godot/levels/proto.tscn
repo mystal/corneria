@@ -1,8 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://cn3eqyqq8m0cj"]
+[gd_scene load_steps=3 format=3 uid="uid://cn3eqyqq8m0cj"]
 
 [ext_resource type="PackedScene" uid="uid://dqg0hcdo0u5in" path="res://entities/player/player.tscn" id="1_gjtow"]
+[ext_resource type="PackedScene" uid="uid://bqmhpckf5nna4" path="res://entities/enemies/enemy.tscn" id="2_ts2fp"]
 
-[node name="Node2D" type="Node2D"]
+[node name="LevelRoot" type="Node2D"]
 
 [node name="PlayerLimitViz" type="Line2D" parent="."]
 position = Vector2(0, -20)
@@ -20,3 +21,19 @@ position = Vector2(0, 1040)
 
 [node name="PlayerBottomRightLimit" type="Node2D" parent="."]
 position = Vector2(720, 1280)
+
+[node name="Enemy" parent="." instance=ExtResource("2_ts2fp")]
+position = Vector2(120, 160)
+rotation = -3.14159
+
+[node name="Enemy2" parent="." instance=ExtResource("2_ts2fp")]
+position = Vector2(280, 160)
+rotation = -3.14159
+
+[node name="Enemy3" parent="." instance=ExtResource("2_ts2fp")]
+position = Vector2(420, 160)
+rotation = -3.14159
+
+[node name="Enemy4" parent="." instance=ExtResource("2_ts2fp")]
+position = Vector2(580, 160)
+rotation = -3.14159
