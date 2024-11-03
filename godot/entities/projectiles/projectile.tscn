@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://c87otpe6316rq"]
+
+[ext_resource type="Script" path="res://entities/projectiles/projectile.gd" id="1_e23e4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xpc6v"]
+size = Vector2(10, 10)
+
+[node name="Projectile" type="Area2D"]
+script = ExtResource("1_e23e4")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+polygon = PackedVector2Array(-5, -5, 5, -5, 5, 5, -5, 5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_xpc6v")
+debug_color = Color(0.875, 0.788, 0.549, 0.42)

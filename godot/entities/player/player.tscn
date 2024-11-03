@@ -1,12 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://dqg0hcdo0u5in"]
+[gd_scene load_steps=4 format=3 uid="uid://dqg0hcdo0u5in"]
 
 [ext_resource type="Script" path="res://entities/player/player.gd" id="1_y4flr"]
+[ext_resource type="PackedScene" uid="uid://c87otpe6316rq" path="res://entities/projectiles/projectile.tscn" id="2_74mmw"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_k4dri"]
 
 [node name="Player" type="CharacterBody2D"]
 motion_mode = 1
 script = ExtResource("1_y4flr")
+projectile_scene = ExtResource("2_74mmw")
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
 position = Vector2(0, -4.5)
