@@ -4,5 +4,19 @@
 
 [node name="Node2D" type="Node2D"]
 
-[node name="Player" parent="." instance=ExtResource("1_gjtow")]
+[node name="PlayerLimitViz" type="Line2D" parent="."]
+position = Vector2(0, -20)
+points = PackedVector2Array(0, 1040, 720, 1040)
+width = 2.0
+default_color = Color(0.457296, 0.457296, 0.457296, 1)
+
+[node name="Player" parent="." node_paths=PackedStringArray("top_left_limit", "bottom_right_limit") instance=ExtResource("1_gjtow")]
 position = Vector2(372, 1206)
+top_left_limit = NodePath("../PlayerTopLeftLimit")
+bottom_right_limit = NodePath("../PlayerBottomRightLimit")
+
+[node name="PlayerTopLeftLimit" type="Node2D" parent="."]
+position = Vector2(0, 1040)
+
+[node name="PlayerBottomRightLimit" type="Node2D" parent="."]
+position = Vector2(720, 1280)

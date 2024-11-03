@@ -3,6 +3,8 @@ extends CharacterBody2D
 
 @export_group("Movement")
 # @export var _speed = 300.0
+@export var top_left_limit: Node2D
+@export var bottom_right_limit: Node2D
 
 @export_group("Shooter")
 @export var projectile_scene: PackedScene
@@ -26,6 +28,8 @@ func _physics_process(delta: float) -> void:
 	# Mouse/Touch input
 	var mouse_pos = get_global_mouse_position()
 	position = position.lerp(mouse_pos, delta * 4.0)
+	if top_left_limit and bottom_right_limit:
+		position = position.clamp(top_left_limit.position, bottom_right_limit.position)
 	# var viewport_rect = get_viewport_rect()
 	# if viewport_rect.has_point(mouse_pos):
 		# var dv = position.distance_to(mouse_pos)
