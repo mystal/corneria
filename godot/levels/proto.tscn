@@ -1,6 +1,5 @@
-[gd_scene load_steps=3 format=3 uid="uid://cn3eqyqq8m0cj"]
+[gd_scene load_steps=2 format=3 uid="uid://cn3eqyqq8m0cj"]
 
-[ext_resource type="PackedScene" uid="uid://dqg0hcdo0u5in" path="res://entities/player/player.tscn" id="1_gjtow"]
 [ext_resource type="PackedScene" uid="uid://bqmhpckf5nna4" path="res://entities/enemies/enemy.tscn" id="2_ts2fp"]
 
 [node name="LevelRoot" type="Node2D"]
@@ -10,11 +9,6 @@ position = Vector2(0, -20)
 points = PackedVector2Array(0, 1040, 720, 1040)
 width = 2.0
 default_color = Color(0.457296, 0.457296, 0.457296, 1)
-
-[node name="Player" parent="." node_paths=PackedStringArray("top_left_limit", "bottom_right_limit") instance=ExtResource("1_gjtow")]
-position = Vector2(372, 1206)
-top_left_limit = NodePath("../PlayerTopLeftLimit")
-bottom_right_limit = NodePath("../PlayerBottomRightLimit")
 
 [node name="PlayerTopLeftLimit" type="Node2D" parent="."]
 position = Vector2(0, 1040)

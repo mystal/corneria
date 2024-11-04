@@ -1,4 +1,4 @@
-class_name Player
+class_name ShooterShip
 extends CharacterBody2D
 
 @export_group("Movement")
