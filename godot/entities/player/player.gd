@@ -46,3 +46,8 @@ func _physics_process(delta: float) -> void:
 
 		# Reset cooldown
 		_fire_cooldown = 1.0 / fire_rate
+
+func _on_hurt_box_area_entered(area: Area2D) -> void:
+	if area is Projectile and area.faction != faction:
+		# TODO: Determine what should happen??
+		print('Ouch')

@@ -21,3 +21,7 @@ func _physics_process(delta: float) -> void:
 
 		# Reset cooldown
 		_fire_cooldown = randf_range(1.0, 3.0)
+
+func _on_hurt_box_area_entered(area: Area2D) -> void:
+	if area is Projectile and area.faction != faction:
+		queue_free()

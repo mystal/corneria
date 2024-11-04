@@ -24,6 +24,11 @@ Enums="*res://globals/enums.gd"
 window/size/viewport_width=720
 window/size/viewport_height=1280
 
+[layer_names]
+
+2d_physics/layer_1="HurtBox"
+2d_physics/layer_2="HitBox"
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"
