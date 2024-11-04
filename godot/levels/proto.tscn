@@ -25,15 +25,19 @@ position = Vector2(720, 1280)
 [node name="Enemy" parent="." instance=ExtResource("2_ts2fp")]
 position = Vector2(120, 160)
 rotation = -3.14159
+wants_to_fire = false
 
 [node name="Enemy2" parent="." instance=ExtResource("2_ts2fp")]
 position = Vector2(280, 160)
 rotation = -3.14159
+wants_to_fire = false
 
 [node name="Enemy3" parent="." instance=ExtResource("2_ts2fp")]
 position = Vector2(420, 160)
 rotation = -3.14159
+wants_to_fire = false
 
 [node name="Enemy4" parent="." instance=ExtResource("2_ts2fp")]
 position = Vector2(580, 160)
 rotation = -3.14159
+wants_to_fire = false
