@@ -29,6 +29,7 @@ window/size/viewport_height=1280
 
 players=""
 bosses=""
+game_over=""
 
 [layer_names]
 

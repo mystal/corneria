@@ -29,8 +29,8 @@ func _physics_process(delta: float) -> void:
 	# 	velocity.x = move_toward(velocity.x, 0, _speed)
 	#move_and_slide()
 
-	if Input.is_action_just_pressed("ui_accept") and starter_ships and starter_ships[0].ship_scene:
-		add_ships(starter_ships[0].ship_scene, 1)
+	# if Input.is_action_just_pressed("ui_accept") and starter_ships and starter_ships[0].ship_scene:
+	# 	add_ships(starter_ships[0].ship_scene, 1)
 
 	# Mouse/Touch input
 	var mouse_pos = get_global_mouse_position()
@@ -60,3 +60,6 @@ func _distribute_ships() -> void:
 func _on_ship_died(ship: ShooterShip) -> void:
 	_ships.erase(ship)
 	_distribute_ships()
+
+	if _ships.is_empty():
+		Globals.player_lost()

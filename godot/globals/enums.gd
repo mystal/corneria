@@ -1,5 +1,11 @@
 extends Node
 
+enum GameStatus {
+    PLAYING,
+    WON,
+    LOST,
+}
+
 enum Faction {
     PLAYER,
     ENEMY,
