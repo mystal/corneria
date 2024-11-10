@@ -70,5 +70,6 @@ position = Vector2(540, -980)
 position = Vector2(360, -1920)
 rotation = 3.14159
 
-[node name="GameOverScreen" parent="." instance=ExtResource("7_xfs3q")]
-visible = true
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="GameOverScreen" parent="CanvasLayer" instance=ExtResource("7_xfs3q")]
