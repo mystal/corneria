@@ -34,6 +34,7 @@ func _physics_process(delta: float) -> void:
 
 	# Mouse/Touch input
 	var mouse_pos = get_global_mouse_position()
+	# TODO: Figure out how to tune the movement so that we can upgrade the move speed.
 	position = position.lerp(mouse_pos, delta * 4.0)
 	if top_left_limit and bottom_right_limit:
 		position = position.clamp(top_left_limit.position, bottom_right_limit.position)

@@ -1,7 +1,7 @@
 class_name Projectile
 extends Area2D
 
-var lifetime: float = 5.0
+var lifetime: float = 1.0
 
 @export_group("Movement")
 @export_range(0.0, 2000.0, 5.0, "or_greater") var speed: float = 600.0
@@ -31,4 +31,7 @@ func _process(delta: float) -> void:
 	position += dir * speed * delta
 
 func _on_lifetime_timer_timeout() -> void:
+	queue_free()
+
+func collided():
 	queue_free()

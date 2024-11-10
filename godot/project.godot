@@ -18,16 +18,23 @@ config/icon="res://icon.svg"
 [autoload]
 
 Enums="*res://globals/enums.gd"
+Globals="*res://globals/globals.gd"
 
 [display]
 
 window/size/viewport_width=720
 window/size/viewport_height=1280
 
+[global_group]
+
+players=""
+bosses=""
+
 [layer_names]
 
 2d_physics/layer_1="HurtBox"
 2d_physics/layer_2="HitBox"
+2d_physics/layer_3="Upgrade"
 
 [rendering]
 

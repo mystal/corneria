@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://bsbbqwbswf6kv"]
+
+[ext_resource type="PackedScene" uid="uid://bqmhpckf5nna4" path="res://entities/enemies/enemy.tscn" id="1_oes05"]
+[ext_resource type="Script" path="res://entities/enemies/boss.gd" id="2_gu3l6"]
+
+[node name="Boss" groups=["bosses"] instance=ExtResource("1_oes05")]
+scale = Vector2(10, 10)
+script = ExtResource("2_gu3l6")
+projectile_scene = null

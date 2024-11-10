@@ -31,5 +31,7 @@ func _exit_tree() -> void:
 	ship_died.emit(self)
 
 func _on_hurt_box_area_entered(area: Area2D) -> void:
-	if area is Projectile and area.faction != faction:
+	var projectile = area as Projectile
+	if projectile and projectile.faction != faction:
 		queue_free()
+		projectile.collided()
