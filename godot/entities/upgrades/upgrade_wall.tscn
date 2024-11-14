@@ -6,7 +6,9 @@
 size = Vector2(360, 10)
 
 [node name="UpgradeBarrier" type="Area2D"]
+collision_layer = 4
 script = ExtResource("1_inlnc")
+size = null
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
 color = Color(1, 0.9625, 0.25, 0.619608)
@@ -14,3 +16,5 @@ polygon = PackedVector2Array(-180, -20, 180, -20, 180, 20, -180, 20)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_ib77m")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

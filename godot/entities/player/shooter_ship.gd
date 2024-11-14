@@ -1,9 +1,6 @@
 class_name ShooterShip
 extends CharacterBody2D
 
-@export_group("Movement")
-# @export var _speed = 300.0
-
 @export_group("Shooter")
 @export var projectile_scene: PackedScene
 @export var fire_rate: float = 2.0

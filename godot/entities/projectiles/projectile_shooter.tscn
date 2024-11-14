@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://vv80d2w7frit"]
+
+[ext_resource type="Script" path="res://entities/projectiles/projectile_shooter.gd" id="1_iv806"]
+[ext_resource type="PackedScene" uid="uid://c87otpe6316rq" path="res://entities/projectiles/projectile.tscn" id="2_wwqko"]
+
+[node name="ProjectileShooter" type="Node2D"]
+script = ExtResource("1_iv806")
+projectile_scene = ExtResource("2_wwqko")

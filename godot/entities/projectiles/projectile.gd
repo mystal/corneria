@@ -9,7 +9,7 @@ var lifetime: float = 1.0
 var instigator: Node = null:
 	set(value):
 		instigator = value
-		if value.faction == Enums.Faction.PLAYER:
+		if faction == Enums.Faction.PLAYER:
 			$Polygon2D.color = Color.WHITE
 		else:
 			$Polygon2D.color = Color.RED

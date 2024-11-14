@@ -1,6 +1,38 @@
-[gd_scene load_steps=2 format=3 uid="uid://sfmcgh8i8s3c"]
+[gd_scene load_steps=6 format=3 uid="uid://sfmcgh8i8s3c"]
 
 [ext_resource type="Script" path="res://entities/player/player.gd" id="1_y4flr"]
+[ext_resource type="PackedScene" uid="uid://cpx5p8sxnv0b" path="res://entities/player/player_movement.tscn" id="2_f45tr"]
+[ext_resource type="PackedScene" uid="uid://vv80d2w7frit" path="res://entities/projectiles/projectile_shooter.tscn" id="3_a1k0p"]
 
-[node name="Player" type="Node2D" groups=["players"]]
+[sub_resource type="CircleShape2D" id="CircleShape2D_gankj"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ai85e"]
+
+[node name="Player" type="CharacterBody2D" groups=["players"]]
+collision_layer = 0
+collision_mask = 0
 script = ExtResource("1_y4flr")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+position = Vector2(0, -4.5)
+scale = Vector2(0.968, 1)
+color = Color(0.47217, 0.545032, 0.857183, 1)
+polygon = PackedVector2Array(0, -20, 20, 20, 0, 15, -20, 20)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_gankj")
+disabled = true
+
+[node name="HurtBox" type="Area2D" parent="."]
+collision_layer = 9
+collision_mask = 2
+
+[node name="HurtBoxShape" type="CollisionShape2D" parent="HurtBox"]
+shape = SubResource("CircleShape2D_ai85e")
+
+[node name="PlayerMovement" parent="." instance=ExtResource("2_f45tr")]
+
+[node name="ProjectileShooter" parent="." instance=ExtResource("3_a1k0p")]
+position = Vector2(0, -24)
+
+[connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]
