@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="GlobalTunables" load_steps=2 format=3 uid="uid://dyb0bh57qajip"]
+
+[ext_resource type="Script" path="res://globals/global_tunables.gd" id="1_161at"]
+
+[resource]
+script = ExtResource("1_161at")
+game_speed = 100.0

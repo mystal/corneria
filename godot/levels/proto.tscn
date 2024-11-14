@@ -1,15 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://cn3eqyqq8m0cj"]
+[gd_scene load_steps=7 format=3 uid="uid://cn3eqyqq8m0cj"]
 
 [ext_resource type="PackedScene" uid="uid://sfmcgh8i8s3c" path="res://entities/player/player.tscn" id="1_gjtow"]
 [ext_resource type="PackedScene" uid="uid://bqmhpckf5nna4" path="res://entities/enemies/enemy.tscn" id="2_ts2fp"]
-[ext_resource type="Script" path="res://entities/upgrades/modify_shoot_rate.gd" id="4_d07en"]
+[ext_resource type="Resource" uid="uid://chodc6k6or0bo" path="res://entities/upgrades/modify_shoot_rate.tres" id="4_4w26c"]
 [ext_resource type="PackedScene" uid="uid://nmrgj4n20s81" path="res://entities/upgrades/upgrade_wall.tscn" id="5_c5j42"]
 [ext_resource type="PackedScene" uid="uid://bsbbqwbswf6kv" path="res://entities/enemies/boss.tscn" id="6_a1g1m"]
 [ext_resource type="PackedScene" uid="uid://casorhn4xy1eq" path="res://ui/screens/game_over_screen.tscn" id="7_xfs3q"]
-
-[sub_resource type="Resource" id="Resource_k3xhk"]
-script = ExtResource("4_d07en")
-amount_to_add = 2.0
 
 [node name="LevelRoot" type="Node2D"]
 
@@ -47,29 +43,23 @@ wants_to_fire = false
 
 [node name="UpgradeBarrier" parent="." instance=ExtResource("5_c5j42")]
 position = Vector2(180, 620)
-upgrade = SubResource("Resource_k3xhk")
-size = null
+upgrade = ExtResource("4_4w26c")
 
 [node name="UpgradeBarrier2" parent="." instance=ExtResource("5_c5j42")]
 position = Vector2(540, 620)
-upgrade = SubResource("Resource_k3xhk")
-size = null
+upgrade = ExtResource("4_4w26c")
 
 [node name="UpgradeBarrier3" parent="." instance=ExtResource("5_c5j42")]
 position = Vector2(180, -180)
-size = null
 
 [node name="UpgradeBarrier4" parent="." instance=ExtResource("5_c5j42")]
 position = Vector2(540, -180)
-size = null
 
 [node name="UpgradeBarrier5" parent="." instance=ExtResource("5_c5j42")]
 position = Vector2(180, -980)
-size = null
 
 [node name="UpgradeBarrier6" parent="." instance=ExtResource("5_c5j42")]
 position = Vector2(540, -980)
-size = null
 
 [node name="Boss" parent="." instance=ExtResource("6_a1g1m")]
 position = Vector2(360, -1920)

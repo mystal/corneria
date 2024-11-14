@@ -1,6 +1,11 @@
 extends Node
 
-@export var game_speed: float = 300.0
+@export var tunables: GlobalTunables = preload("res://globals/global_tunables.tres")
+
+var game_speed: float:
+	get:
+		return tunables.game_speed
+
 var game_status: Enums.GameStatus = Enums.GameStatus.PLAYING
 
 func _ready() -> void:

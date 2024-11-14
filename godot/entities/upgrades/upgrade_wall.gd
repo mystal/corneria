@@ -5,7 +5,13 @@ extends Area2D
 @export var size: Enums.UpgradeWallSize = Enums.UpgradeWallSize.HALF
 
 func _ready() -> void:
-	pass
+	if upgrade:
+		$Label.text = upgrade.description()
+		$Polygon2D.color.r = upgrade.color.r
+		$Polygon2D.color.g = upgrade.color.g
+		$Polygon2D.color.b = upgrade.color.b
+	else:
+		$Label.text = "Empty"
 
 func _process(delta: float) -> void:
 	position.y += Globals.game_speed * delta
