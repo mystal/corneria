@@ -1,11 +1,9 @@
-class_name UpgradeWall
+class_name UpgradeLoot
 extends Area2D
 
 @export var upgrade: UpgradeData:
 	set(value):
 		upgrade = value
-
-@export var size: Enums.UpgradeWallSize = Enums.UpgradeWallSize.HALF
 
 func _ready() -> void:
 	_update_visuals()
@@ -29,3 +27,4 @@ func _update_visuals() -> void:
 		$Polygon2D.color.b = upgrade.color.b
 	else:
 		$Label.text = "Empty"
+

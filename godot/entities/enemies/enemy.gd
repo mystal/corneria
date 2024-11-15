@@ -10,6 +10,9 @@ extends CharacterBody2D
 # @export_group("Health")
 # @export var health: int = 10
 
+@export_group("Loot")
+@export var loot_category: Enums.LootCategory = Enums.LootCategory.BASIC
+
 var faction: Enums.Faction = Enums.Faction.ENEMY
 
 @onready var _fire_cooldown: float = randf_range(1.0, 3.0)
@@ -45,4 +48,12 @@ func _on_hurt_box_area_entered(area: Area2D) -> void:
 		projectile.collided()
 
 func died() -> void:
+	# Spawn loot.
+	var loot_upgrade: UpgradeData = Globals.pick_loot_for(loot_category)
+	var packed_loot_scene = preload("res://entities/upgrades/upgrade_loot.tscn")
+	var new_loot_scene = packed_loot_scene.instantiate()
+	new_loot_scene.position = global_position
+	new_loot_scene.upgrade = loot_upgrade
+	get_tree().current_scene.add_child(new_loot_scene)
+
 	queue_free()

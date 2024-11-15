@@ -33,3 +33,6 @@ func player_lost() -> void:
 func restart_game() -> void:
 	get_tree().paused = false
 	get_tree().reload_current_scene()
+
+func pick_loot_for(_category: Enums.LootCategory) -> UpgradeData:
+	return tunables.loot_table.pick_random()

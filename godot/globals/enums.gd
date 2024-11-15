@@ -17,3 +17,8 @@ enum UpgradeWallSize {
     # A third of the screen width.
     THIRD,
 }
+
+enum LootCategory {
+	BASIC,
+	BOSS,
+}
