@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://cxb5030qvc1w7"]
+
+[ext_resource type="PackedScene" uid="uid://sfmcgh8i8s3c" path="res://entities/player/player.tscn" id="1_udf1h"]
+[ext_resource type="PackedScene" uid="uid://dxoa4ct6wgk4m" path="res://dev/ui/debug_ui.tscn" id="2_5wa22"]
+
+[node name="Root" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_udf1h")]
+position = Vector2(340, 640)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="DebugUi" parent="CanvasLayer" instance=ExtResource("2_5wa22")]

@@ -1,10 +1,11 @@
 class_name Projectile
 extends Area2D
 
-var lifetime: float = 1.0
-
 @export_group("Movement")
 @export_range(0.0, 2000.0, 5.0, "or_greater") var speed: float = 600.0
+@export var max_range: float = 600.0
+
+@onready var lifetime: float = max_range / speed
 
 var instigator: Node = null:
 	set(value):
@@ -24,8 +25,7 @@ var dir: Vector2 = Vector2.ZERO
 
 func _ready() -> void:
 	if lifetime > 0.0:
-		$LifetimeTimer.wait_time = lifetime
-		$LifetimeTimer.start()
+		$LifetimeTimer.start(lifetime)
 
 func _process(delta: float) -> void:
 	position += dir * speed * delta
