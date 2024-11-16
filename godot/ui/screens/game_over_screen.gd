@@ -2,7 +2,7 @@ class_name GameOverScreen
 extends Control
 
 func _ready() -> void:
-	pass
+	visible = false
 
 func player_won() -> void:
 	$Label.text = "You win!\nPress Spacebar to play again!"
