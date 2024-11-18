@@ -24,8 +24,9 @@ func _ready() -> void:
 
 	projectile_shooter.instigator = self
 
-func _physics_process(delta: float) -> void:
-	pass
+func _physics_process(_delta: float) -> void:
+	if Input.is_action_pressed("ui_accept"):
+		projectile_shooter.fire()
 
 func _on_hurt_box_area_entered(area: Area2D) -> void:
 	var projectile = area as Projectile
