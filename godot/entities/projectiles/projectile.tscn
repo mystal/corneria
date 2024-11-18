@@ -9,6 +9,7 @@ size = Vector2(10, 10)
 collision_layer = 2
 collision_mask = 0
 script = ExtResource("1_e23e4")
+hostile_color = Color(1, 0.529269, 0.408598, 1)
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
 polygon = PackedVector2Array(-5, -5, 5, -5, 5, 5, -5, 5)
