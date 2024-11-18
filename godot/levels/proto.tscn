@@ -61,6 +61,7 @@ position = Vector2(540, -980)
 [node name="Boss" parent="." instance=ExtResource("6_a1g1m")]
 position = Vector2(360, -1920)
 rotation = 3.14159
+loot_category = null
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

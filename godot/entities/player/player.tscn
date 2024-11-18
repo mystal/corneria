@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://sfmcgh8i8s3c"]
+[gd_scene load_steps=7 format=3 uid="uid://sfmcgh8i8s3c"]
 
 [ext_resource type="Script" path="res://entities/player/player.gd" id="1_y4flr"]
 [ext_resource type="PackedScene" uid="uid://cpx5p8sxnv0b" path="res://entities/player/player_movement.tscn" id="2_f45tr"]
 [ext_resource type="PackedScene" uid="uid://vv80d2w7frit" path="res://entities/projectiles/projectile_shooter.tscn" id="3_a1k0p"]
+[ext_resource type="Script" path="res://entities/components/health.gd" id="4_h6o3u"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gankj"]
 
@@ -35,4 +36,9 @@ shape = SubResource("CircleShape2D_ai85e")
 [node name="ProjectileShooter" parent="." instance=ExtResource("3_a1k0p")]
 position = Vector2(0, -24)
 
+[node name="Health" type="Node" parent="."]
+script = ExtResource("4_h6o3u")
+max_health = 6.0
+
 [connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]
+[connection signal="died" from="Health" to="." method="_on_health_died"]

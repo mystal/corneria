@@ -10,6 +10,7 @@ var faction: Enums.Faction = Enums.Faction.PLAYER
 # Components
 @onready var player_movement: PlayerMovement = $PlayerMovement
 @onready var projectile_shooter: ProjectileShooter = $ProjectileShooter
+@onready var health: Health = $Health
 
 # @export_group("Ship Management")
 # @export var starter_ships: Array[StarterShips] = []
@@ -31,8 +32,11 @@ func _physics_process(_delta: float) -> void:
 func _on_hurt_box_area_entered(area: Area2D) -> void:
 	var projectile = area as Projectile
 	if projectile and projectile.faction != faction:
-		queue_free()
+		health.take_damage(projectile.damage)
 		projectile.collided()
+
+func _on_health_died() -> void:
+	queue_free()
 
 # func add_ships(ship_scene: PackedScene, num_ships: int) -> void:
 # 	for i in num_ships:

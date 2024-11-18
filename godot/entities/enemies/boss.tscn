@@ -6,7 +6,11 @@
 [node name="Boss" groups=["bosses"] instance=ExtResource("1_oes05")]
 scale = Vector2(10, 10)
 script = ExtResource("2_gu3l6")
+loot_category = null
 
 [node name="ProjectileShooter" parent="." index="3"]
 fire_behavior = 0
 fire_rate = 1.0
+
+[node name="Health" parent="." index="4"]
+max_health = 20.0

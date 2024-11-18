@@ -12,6 +12,7 @@ var faction: Enums.Faction = Enums.Faction.ENEMY
 
 # Components
 @onready var projectile_shooter: ProjectileShooter = $ProjectileShooter
+@onready var health: Health = $Health
 
 func _ready() -> void:
 	projectile_shooter.instigator = self
@@ -26,10 +27,10 @@ func _physics_process(delta: float) -> void:
 func _on_hurt_box_area_entered(area: Area2D) -> void:
 	var projectile = area as Projectile
 	if projectile and projectile.faction != faction:
-		died()
+		health.take_damage(projectile.damage)
 		projectile.collided()
 
-func died() -> void:
+func _on_health_died() -> void:
 	# Spawn loot.
 	var loot_upgrade: UpgradeData = Globals.pick_loot_for(loot_category)
 	var packed_loot_scene = preload("res://entities/upgrades/upgrade_loot.tscn")

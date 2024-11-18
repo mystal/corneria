@@ -5,6 +5,9 @@ extends Area2D
 @export_range(0.0, 2000.0, 5.0, "or_greater") var speed: float = 600.0
 @export var max_range: float = 600.0
 
+@export_group("Hit Spec")
+@export var damage: float = 1.0
+
 @export_group("Colors")
 @export var friendly_color: Color = Color.WHITE
 @export var hostile_color: Color = Color.ORANGE_RED
@@ -14,16 +17,16 @@ extends Area2D
 var instigator: Node = null:
 	set(value):
 		instigator = value
+		if instigator:
+			faction = instigator.faction
+
+var faction: Enums.Faction:
+	set(value):
+		faction = value
 		if faction == Enums.Faction.PLAYER:
 			$Polygon2D.color = friendly_color
 		else:
 			$Polygon2D.color = hostile_color
-
-var faction: Enums.Faction:
-	get:
-		if instigator:
-			return instigator.faction
-		return Enums.Faction.PLAYER
 
 var dir: Vector2 = Vector2.ZERO
 
