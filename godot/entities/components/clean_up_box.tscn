@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://ymh6dswhlrjg"]
+
+[ext_resource type="Script" path="res://entities/components/clean_up_box.gd" id="1_qudor"]
+
+[node name="CleanUpBox" type="Area2D"]
+collision_layer = 16
+collision_mask = 0
+script = ExtResource("1_qudor")
+
+[node name="CleanUpShape" type="CollisionShape2D" parent="."]

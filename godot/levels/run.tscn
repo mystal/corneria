@@ -1,13 +1,21 @@
-[gd_scene load_steps=7 format=3 uid="uid://cn3eqyqq8m0cj"]
+[gd_scene load_steps=8 format=3 uid="uid://cn3eqyqq8m0cj"]
 
-[ext_resource type="PackedScene" uid="uid://sfmcgh8i8s3c" path="res://entities/player/player.tscn" id="1_gjtow"]
-[ext_resource type="PackedScene" uid="uid://bqmhpckf5nna4" path="res://entities/enemies/enemy.tscn" id="2_ts2fp"]
-[ext_resource type="Resource" uid="uid://chodc6k6or0bo" path="res://entities/upgrades/modify_shoot_rate.tres" id="4_4w26c"]
-[ext_resource type="PackedScene" uid="uid://nmrgj4n20s81" path="res://entities/upgrades/upgrade_wall.tscn" id="5_c5j42"]
-[ext_resource type="PackedScene" uid="uid://bsbbqwbswf6kv" path="res://entities/enemies/boss.tscn" id="6_a1g1m"]
-[ext_resource type="PackedScene" uid="uid://casorhn4xy1eq" path="res://ui/screens/game_over_screen.tscn" id="7_xfs3q"]
+[ext_resource type="PackedScene" uid="uid://casorhn4xy1eq" path="res://ui/screens/game_over_screen.tscn" id="1_7i0p8"]
+[ext_resource type="PackedScene" uid="uid://sfmcgh8i8s3c" path="res://entities/player/player.tscn" id="2_4swdl"]
+[ext_resource type="PackedScene" uid="uid://bqmhpckf5nna4" path="res://entities/enemies/enemy.tscn" id="3_30jlu"]
+[ext_resource type="PackedScene" uid="uid://nmrgj4n20s81" path="res://entities/upgrades/upgrade_wall.tscn" id="4_k63t8"]
+[ext_resource type="Resource" uid="uid://chodc6k6or0bo" path="res://entities/upgrades/modify_shoot_rate.tres" id="5_fvdgj"]
+[ext_resource type="PackedScene" uid="uid://bsbbqwbswf6kv" path="res://entities/enemies/boss.tscn" id="6_lkqff"]
+[ext_resource type="PackedScene" uid="uid://bcpeto3as35rm" path="res://entities/props/kill_plane.tscn" id="7_qjsrg"]
 
 [node name="LevelRoot" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="GameOverScreen" parent="CanvasLayer" instance=ExtResource("1_7i0p8")]
+
+[node name="KillPlane" parent="." instance=ExtResource("7_qjsrg")]
+position = Vector2(360, 1720)
 
 [node name="PlayerLimitViz" type="Line2D" parent="."]
 position = Vector2(0, 80)
@@ -15,7 +23,7 @@ points = PackedVector2Array(0, 1040, 720, 1040)
 width = 2.0
 default_color = Color(0.457296, 0.457296, 0.457296, 1)
 
-[node name="Player" parent="." node_paths=PackedStringArray("top_left_limit", "bottom_right_limit") instance=ExtResource("1_gjtow")]
+[node name="Player" parent="." node_paths=PackedStringArray("top_left_limit", "bottom_right_limit") instance=ExtResource("2_4swdl")]
 position = Vector2(360, 1200)
 top_left_limit = NodePath("../PlayerTopLeftLimit")
 bottom_right_limit = NodePath("../PlayerBottomRightLimit")
@@ -26,43 +34,37 @@ position = Vector2(0, 1140)
 [node name="PlayerBottomRightLimit" type="Node2D" parent="."]
 position = Vector2(720, 1280)
 
-[node name="Enemy" parent="." instance=ExtResource("2_ts2fp")]
+[node name="Enemy" parent="." instance=ExtResource("3_30jlu")]
 position = Vector2(220, 180)
 rotation = -3.14159
 
-[node name="Enemy2" parent="." instance=ExtResource("2_ts2fp")]
+[node name="Enemy2" parent="." instance=ExtResource("3_30jlu")]
 position = Vector2(480, -620)
 rotation = -3.14159
 
-[node name="Enemy3" parent="." instance=ExtResource("2_ts2fp")]
+[node name="Enemy3" parent="." instance=ExtResource("3_30jlu")]
 position = Vector2(320, -1300)
 rotation = -3.14159
 
-[node name="UpgradeBarrier" parent="." instance=ExtResource("5_c5j42")]
+[node name="UpgradeBarrier" parent="." instance=ExtResource("4_k63t8")]
 position = Vector2(180, 620)
-upgrade = ExtResource("4_4w26c")
+upgrade = ExtResource("5_fvdgj")
 
-[node name="UpgradeBarrier2" parent="." instance=ExtResource("5_c5j42")]
+[node name="UpgradeBarrier2" parent="." instance=ExtResource("4_k63t8")]
 position = Vector2(540, 620)
-upgrade = ExtResource("4_4w26c")
+upgrade = ExtResource("5_fvdgj")
 
-[node name="UpgradeBarrier3" parent="." instance=ExtResource("5_c5j42")]
+[node name="UpgradeBarrier3" parent="." instance=ExtResource("4_k63t8")]
 position = Vector2(180, -180)
 
-[node name="UpgradeBarrier4" parent="." instance=ExtResource("5_c5j42")]
+[node name="UpgradeBarrier4" parent="." instance=ExtResource("4_k63t8")]
 position = Vector2(540, -180)
 
-[node name="UpgradeBarrier5" parent="." instance=ExtResource("5_c5j42")]
+[node name="UpgradeBarrier5" parent="." instance=ExtResource("4_k63t8")]
 position = Vector2(180, -980)
 
-[node name="UpgradeBarrier6" parent="." instance=ExtResource("5_c5j42")]
+[node name="UpgradeBarrier6" parent="." instance=ExtResource("4_k63t8")]
 position = Vector2(540, -980)
 
-[node name="Boss" parent="." instance=ExtResource("6_a1g1m")]
+[node name="Boss" parent="." instance=ExtResource("6_lkqff")]
 position = Vector2(360, -1920)
-rotation = 3.14159
-loot_category = null
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="GameOverScreen" parent="CanvasLayer" instance=ExtResource("7_xfs3q")]

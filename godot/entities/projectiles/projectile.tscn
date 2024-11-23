@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://c87otpe6316rq"]
+[gd_scene load_steps=4 format=3 uid="uid://c87otpe6316rq"]
 
 [ext_resource type="Script" path="res://entities/projectiles/projectile.gd" id="1_e23e4"]
+[ext_resource type="PackedScene" uid="uid://ymh6dswhlrjg" path="res://entities/components/clean_up_box.tscn" id="2_8u6lw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xpc6v"]
 size = Vector2(10, 10)
@@ -22,4 +23,12 @@ debug_color = Color(0.875, 0.788, 0.549, 0.42)
 process_callback = 0
 one_shot = true
 
+[node name="CleanUpBox" parent="." instance=ExtResource("2_8u6lw")]
+
+[node name="CleanUpShape" parent="CleanUpBox" index="0"]
+shape = SubResource("RectangleShape2D_xpc6v")
+
 [connection signal="timeout" from="LifetimeTimer" to="." method="_on_lifetime_timer_timeout"]
+[connection signal="clean_up" from="CleanUpBox" to="." method="_on_clean_up_box_clean_up"]
+
+[editable path="CleanUpBox"]

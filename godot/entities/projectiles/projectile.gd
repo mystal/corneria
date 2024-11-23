@@ -42,3 +42,6 @@ func _on_lifetime_timer_timeout() -> void:
 
 func collided():
 	queue_free()
+
+func _on_clean_up_box_clean_up() -> void:
+	queue_free()

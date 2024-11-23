@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://bqmhpckf5nna4"]
+[gd_scene load_steps=7 format=3 uid="uid://bqmhpckf5nna4"]
 
 [ext_resource type="Script" path="res://entities/enemies/enemy.gd" id="1_i10bu"]
 [ext_resource type="PackedScene" uid="uid://vv80d2w7frit" path="res://entities/projectiles/projectile_shooter.tscn" id="3_cl6oq"]
 [ext_resource type="Script" path="res://entities/components/health.gd" id="3_uu0qb"]
+[ext_resource type="PackedScene" uid="uid://ymh6dswhlrjg" path="res://entities/components/clean_up_box.tscn" id="4_wpajx"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_k4dri"]
 radius = 8.0
@@ -11,6 +12,7 @@ radius = 8.0
 radius = 8.0
 
 [node name="Enemy" type="CharacterBody2D"]
+rotation = 3.14159
 collision_layer = 0
 collision_mask = 0
 motion_mode = 1
@@ -40,5 +42,13 @@ direction = Vector2(0, 1)
 script = ExtResource("3_uu0qb")
 max_health = 3.0
 
+[node name="CleanUpBox" parent="." instance=ExtResource("4_wpajx")]
+
+[node name="CleanUpShape" parent="CleanUpBox" index="0"]
+shape = SubResource("CircleShape2D_bg1ic")
+
 [connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]
 [connection signal="died" from="Health" to="." method="_on_health_died"]
+[connection signal="clean_up" from="CleanUpBox" to="." method="_on_clean_up_box_clean_up"]
+
+[editable path="CleanUpBox"]

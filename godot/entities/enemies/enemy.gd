@@ -40,3 +40,6 @@ func _on_health_died() -> void:
 	get_tree().current_scene.add_child(new_loot_scene)
 
 	queue_free()
+
+func _on_clean_up_box_clean_up() -> void:
+	queue_free()
