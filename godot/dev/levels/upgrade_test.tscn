@@ -20,6 +20,11 @@ position = Vector2(360, 720)
 left_upgrade = ExtResource("2_g8vu6")
 right_upgrade = ExtResource("4_4l7lx")
 
+[node name="UpgradeWall3" parent="." instance=ExtResource("1_u15f2")]
+position = Vector2(360, 875)
+left_upgrade = ExtResource("2_g8vu6")
+right_upgrade = ExtResource("4_4l7lx")
+
 [node name="UpgradeWall2" parent="." instance=ExtResource("1_u15f2")]
 position = Vector2(360, 476)
 left_upgrade = ExtResource("5_rs4w1")
