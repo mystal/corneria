@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="ModifyShootRange" load_steps=2 format=3 uid="uid://dnp5v6o88oicf"]
+
+[ext_resource type="Script" path="res://entities/upgrades/resource_scripts/modify_shoot_range.gd" id="1_0oer0"]
+
+[resource]
+script = ExtResource("1_0oer0")
+amount_to_add = 100.0
+color = Color(0.149965, 0.674022, 0.326115, 1)

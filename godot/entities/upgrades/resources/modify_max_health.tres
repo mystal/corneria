@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="ModifyMaxHealth" load_steps=2 format=3 uid="uid://cxkb82ydbo0dj"]
+
+[ext_resource type="Script" path="res://entities/upgrades/resource_scripts/modify_max_health.gd" id="1_e2put"]
+
+[resource]
+script = ExtResource("1_e2put")
+amount_to_add = 1.0
+color = Color(1, 0.214344, 0.314428, 1)

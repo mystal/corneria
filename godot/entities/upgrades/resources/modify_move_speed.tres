@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="ModifyMoveSpeed" load_steps=2 format=3 uid="uid://cpgmge0eqox6s"]
+
+[ext_resource type="Script" path="res://entities/upgrades/resource_scripts/modify_move_speed.gd" id="1_jedrf"]
+
+[resource]
+script = ExtResource("1_jedrf")
+amount_to_add = 2.0
+color = Color(0.804514, 0.477987, 0, 1)
