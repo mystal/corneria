@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://sfmcgh8i8s3c"]
+[gd_scene load_steps=8 format=3 uid="uid://sfmcgh8i8s3c"]
 
 [ext_resource type="Script" path="res://entities/player/player.gd" id="1_y4flr"]
 [ext_resource type="PackedScene" uid="uid://cpx5p8sxnv0b" path="res://entities/player/player_movement.tscn" id="2_f45tr"]
@@ -8,6 +8,9 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_gankj"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ai85e"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_arwtc"]
+radius = 1.0
 
 [node name="Player" type="CharacterBody2D" groups=["players"]]
 collision_layer = 0
@@ -30,6 +33,14 @@ collision_mask = 2
 
 [node name="HurtBoxShape" type="CollisionShape2D" parent="HurtBox"]
 shape = SubResource("CircleShape2D_ai85e")
+
+[node name="UpgradeArea" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UpgradeArea"]
+shape = SubResource("CircleShape2D_arwtc")
+debug_color = Color(0.717191, 0.479909, 0.104489, 0.42)
 
 [node name="PlayerMovement" parent="." instance=ExtResource("2_f45tr")]
 
