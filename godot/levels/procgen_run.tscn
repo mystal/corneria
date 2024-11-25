@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://bcc64g57kia51"]
+
+[ext_resource type="PackedScene" uid="uid://casorhn4xy1eq" path="res://ui/screens/game_over_screen.tscn" id="1_kbdqy"]
+[ext_resource type="PackedScene" uid="uid://bcpeto3as35rm" path="res://entities/props/kill_plane.tscn" id="2_qpi74"]
+[ext_resource type="PackedScene" uid="uid://sfmcgh8i8s3c" path="res://entities/player/player.tscn" id="3_y50jo"]
+
+[node name="LevelRoot" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="GameOverScreen" parent="CanvasLayer" instance=ExtResource("1_kbdqy")]
+
+[node name="KillPlane" parent="." instance=ExtResource("2_qpi74")]
+position = Vector2(360, 1720)
+
+[node name="PlayerLimitViz" type="Line2D" parent="."]
+position = Vector2(0, 80)
+points = PackedVector2Array(0, 1040, 720, 1040)
+width = 2.0
+default_color = Color(0.457296, 0.457296, 0.457296, 1)
+
+[node name="Player" parent="." node_paths=PackedStringArray("top_left_limit", "bottom_right_limit") instance=ExtResource("3_y50jo")]
+position = Vector2(360, 1200)
+top_left_limit = NodePath("../PlayerTopLeftLimit")
+bottom_right_limit = NodePath("../PlayerBottomRightLimit")
+
+[node name="PlayerTopLeftLimit" type="Node2D" parent="."]
+position = Vector2(0, 1140)
+
+[node name="PlayerBottomRightLimit" type="Node2D" parent="."]
+position = Vector2(720, 1280)
