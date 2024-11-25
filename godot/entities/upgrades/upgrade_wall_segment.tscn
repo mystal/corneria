@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://nmrgj4n20s81"]
 
-[ext_resource type="Script" path="res://entities/upgrades/upgrade_wall.gd" id="1_inlnc"]
+[ext_resource type="Script" path="res://entities/upgrades/upgrade_wall_segment.gd" id="1_inlnc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ib77m"]
 size = Vector2(360, 10)

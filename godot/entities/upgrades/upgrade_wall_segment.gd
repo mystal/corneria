@@ -1,4 +1,4 @@
-class_name UpgradeWall
+class_name UpgradeWallSegment
 extends Area2D
 
 @export var upgrade: UpgradeData:

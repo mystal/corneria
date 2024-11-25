@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://casorhn4xy1eq" path="res://ui/screens/game_over_screen.tscn" id="1_7i0p8"]
 [ext_resource type="PackedScene" uid="uid://sfmcgh8i8s3c" path="res://entities/player/player.tscn" id="2_4swdl"]
 [ext_resource type="PackedScene" uid="uid://bqmhpckf5nna4" path="res://entities/enemies/enemy.tscn" id="3_30jlu"]
-[ext_resource type="PackedScene" uid="uid://nmrgj4n20s81" path="res://entities/upgrades/upgrade_wall.tscn" id="4_k63t8"]
+[ext_resource type="PackedScene" uid="uid://nmrgj4n20s81" path="res://entities/upgrades/upgrade_wall_segment.tscn" id="4_k63t8"]
 [ext_resource type="Resource" uid="uid://chodc6k6or0bo" path="res://entities/upgrades/modify_shoot_rate.tres" id="5_fvdgj"]
 [ext_resource type="PackedScene" uid="uid://bsbbqwbswf6kv" path="res://entities/enemies/boss.tscn" id="6_lkqff"]
 [ext_resource type="PackedScene" uid="uid://bcpeto3as35rm" path="res://entities/props/kill_plane.tscn" id="7_qjsrg"]
