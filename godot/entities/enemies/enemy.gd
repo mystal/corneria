@@ -20,9 +20,6 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	# Move first
 	position.y += Globals.game_speed * delta
-	# Despawn if we're outside the game space.
-	if position.y > 1280.0 + 100.0:
-		queue_free()
 
 func _on_hurt_box_area_entered(area: Area2D) -> void:
 	var projectile = area as Projectile
