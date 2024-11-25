@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://globals/global_tunables.gd" id="1_161at"]
 [ext_resource type="Script" path="res://entities/upgrades/upgrade_data.gd" id="1_tub8l"]
-[ext_resource type="Resource" uid="uid://chodc6k6or0bo" path="res://entities/upgrades/modify_shoot_rate.tres" id="2_b6wuo"]
+[ext_resource type="Resource" uid="uid://chodc6k6or0bo" path="res://entities/upgrades/resources/modify_shoot_rate.tres" id="2_b6wuo"]
 
 [resource]
 script = ExtResource("1_161at")

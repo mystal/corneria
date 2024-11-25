@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://bdkjn662bynv5"]
 
 [ext_resource type="PackedScene" uid="uid://b4ygg38b6ifgf" path="res://entities/upgrades/upgrade_wall.tscn" id="1_u15f2"]
-[ext_resource type="Resource" uid="uid://chodc6k6or0bo" path="res://entities/upgrades/modify_shoot_rate.tres" id="2_g8vu6"]
+[ext_resource type="Resource" uid="uid://chodc6k6or0bo" path="res://entities/upgrades/resources/modify_shoot_rate.tres" id="2_g8vu6"]
 [ext_resource type="PackedScene" uid="uid://sfmcgh8i8s3c" path="res://entities/player/player.tscn" id="3_dofqr"]
 [ext_resource type="PackedScene" uid="uid://dxoa4ct6wgk4m" path="res://dev/ui/debug_ui.tscn" id="4_2os77"]
 [ext_resource type="PackedScene" uid="uid://bg8h2q28u0j2l" path="res://entities/upgrades/upgrade_loot.tscn" id="5_fvvly"]

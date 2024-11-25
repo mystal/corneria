@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="ModifyShootRate" load_steps=2 format=3 uid="uid://chodc6k6or0bo"]
 
-[ext_resource type="Script" path="res://entities/upgrades/modify_shoot_rate.gd" id="1_5s5vm"]
+[ext_resource type="Script" path="res://entities/upgrades/resource_scripts/modify_shoot_rate.gd" id="1_5s5vm"]
 
 [resource]
 script = ExtResource("1_5s5vm")
