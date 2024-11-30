@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bdkjn662bynv5"]
+[gd_scene load_steps=10 format=3 uid="uid://bdkjn662bynv5"]
 
 [ext_resource type="PackedScene" uid="uid://b4ygg38b6ifgf" path="res://entities/upgrades/upgrade_wall.tscn" id="1_u15f2"]
 [ext_resource type="Resource" uid="uid://chodc6k6or0bo" path="res://entities/upgrades/resources/modify_shoot_rate.tres" id="2_g8vu6"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bg8h2q28u0j2l" path="res://entities/upgrades/upgrade_loot.tscn" id="5_fvvly"]
 [ext_resource type="Resource" uid="uid://cxkb82ydbo0dj" path="res://entities/upgrades/resources/modify_max_health.tres" id="5_rs4w1"]
 [ext_resource type="Resource" uid="uid://cpgmge0eqox6s" path="res://entities/upgrades/resources/modify_move_speed.tres" id="7_gkbpw"]
+[ext_resource type="PackedScene" uid="uid://bcpeto3as35rm" path="res://entities/props/kill_plane.tscn" id="9_cg2dq"]
 
 [node name="Root" type="Node2D"]
 
@@ -40,3 +41,6 @@ upgrade = ExtResource("2_g8vu6")
 [node name="UpgradeLoot2" parent="." instance=ExtResource("5_fvvly")]
 position = Vector2(536, 250)
 upgrade = ExtResource("7_gkbpw")
+
+[node name="KillPlane" parent="." instance=ExtResource("9_cg2dq")]
+position = Vector2(360, 1280)

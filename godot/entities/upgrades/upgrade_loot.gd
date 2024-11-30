@@ -29,3 +29,6 @@ func _update_visuals() -> void:
 
 func _on_animation_player_animation_finished(_anim_name: StringName) -> void:
 	queue_free()
+
+func _on_clean_up_box_clean_up() -> void:
+	queue_free()

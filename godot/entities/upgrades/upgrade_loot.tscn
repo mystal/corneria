@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://bg8h2q28u0j2l"]
+[gd_scene load_steps=7 format=3 uid="uid://bg8h2q28u0j2l"]
 
 [ext_resource type="Script" path="res://entities/upgrades/upgrade_loot.gd" id="1_33ob8"]
+[ext_resource type="PackedScene" uid="uid://ymh6dswhlrjg" path="res://entities/components/clean_up_box.tscn" id="2_njjkd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qtocj"]
-size = Vector2(80, 80)
+size = Vector2(60, 60)
 
 [sub_resource type="Animation" id="Animation_yyu3y"]
 resource_name = "picked_up"
@@ -38,7 +39,12 @@ _data = {
 "picked_up": SubResource("Animation_yyu3y")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o1of8"]
+size = Vector2(40, 40)
+
 [node name="UpgradeLoot" type="Area2D"]
+collision_layer = 4
+collision_mask = 8
 script = ExtResource("1_33ob8")
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
@@ -71,5 +77,13 @@ libraries = {
 "": SubResource("AnimationLibrary_b1c2a")
 }
 
+[node name="CleanUpBox" parent="." instance=ExtResource("2_njjkd")]
+
+[node name="CleanUpShape" parent="CleanUpBox" index="0"]
+shape = SubResource("RectangleShape2D_o1of8")
+
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="clean_up" from="CleanUpBox" to="." method="_on_clean_up_box_clean_up"]
+
+[editable path="CleanUpBox"]
