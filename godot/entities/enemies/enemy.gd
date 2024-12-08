@@ -5,6 +5,8 @@ extends CharacterBody2D
 # @export_group("Health")
 # @export var health: int = 10
 
+@export var should_shoot: bool = false
+
 @export_group("Loot")
 @export var loot_category: Enums.LootCategory = Enums.LootCategory.BASIC
 
@@ -16,6 +18,7 @@ var faction: Enums.Faction = Enums.Faction.ENEMY
 
 func _ready() -> void:
 	projectile_shooter.instigator = self
+	projectile_shooter.fire_behavior = Enums.FireBehavior.AUTO if should_shoot else Enums.FireBehavior.AT_WILL
 
 func _physics_process(delta: float) -> void:
 	# Move first
@@ -29,9 +32,9 @@ func _on_hurt_box_area_entered(area: Area2D) -> void:
 
 func _on_health_died() -> void:
 	# Spawn loot.
-	var loot_upgrade: UpgradeData = Globals.pick_loot_for(loot_category)
+	var loot_upgrade := Globals.pick_loot_for(loot_category)
 	var packed_loot_scene = preload("res://entities/upgrades/upgrade_loot.tscn")
-	var new_loot_scene = packed_loot_scene.instantiate()
+	var new_loot_scene: UpgradeLoot = packed_loot_scene.instantiate()
 	new_loot_scene.position = global_position
 	new_loot_scene.upgrade = loot_upgrade
 	get_tree().current_scene.add_child(new_loot_scene)

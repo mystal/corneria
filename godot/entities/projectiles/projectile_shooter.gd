@@ -1,16 +1,9 @@
 class_name ProjectileShooter
 extends Node2D
 
-enum FireBehavior {
-	## The Shooter will automatically fire when not on cooldown.
-	AUTO,
-	## The Shooter can request to shoot, limited by its fire rate cooldown.
-	AT_WILL,
-}
-
 @export_group("Shooter")
 @export var projectile_scene: PackedScene
-@export var fire_behavior: FireBehavior = FireBehavior.AUTO
+@export var fire_behavior: Enums.FireBehavior = Enums.FireBehavior.AUTO
 @export var fire_rate: float = 2.0
 @export var initial_cooldown: float = 0.0
 @export var projectile_range: float = 600.0
@@ -26,7 +19,7 @@ func _process(delta: float) -> void:
 		return
 
 	_fire_cooldown = max(_fire_cooldown - delta, 0.0)
-	if fire_behavior == FireBehavior.AUTO:
+	if fire_behavior == Enums.FireBehavior.AUTO:
 		fire()
 
 func fire() -> void:

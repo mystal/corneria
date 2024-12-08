@@ -1,10 +1,13 @@
-[gd_resource type="Resource" script_class="GlobalTunables" load_steps=4 format=3 uid="uid://dyb0bh57qajip"]
+[gd_resource type="Resource" script_class="GlobalTunables" load_steps=7 format=3 uid="uid://dyb0bh57qajip"]
 
 [ext_resource type="Script" path="res://globals/global_tunables.gd" id="1_161at"]
 [ext_resource type="Script" path="res://entities/upgrades/upgrade_data.gd" id="1_tub8l"]
 [ext_resource type="Resource" uid="uid://chodc6k6or0bo" path="res://entities/upgrades/resources/modify_shoot_rate.tres" id="2_b6wuo"]
+[ext_resource type="Resource" uid="uid://cxkb82ydbo0dj" path="res://entities/upgrades/resources/modify_max_health.tres" id="3_mm6yw"]
+[ext_resource type="Resource" uid="uid://cpgmge0eqox6s" path="res://entities/upgrades/resources/modify_move_speed.tres" id="4_w8y06"]
+[ext_resource type="Resource" uid="uid://dnp5v6o88oicf" path="res://entities/upgrades/resources/modify_shoot_range.tres" id="5_mlq8f"]
 
 [resource]
 script = ExtResource("1_161at")
-game_speed = 100.0
-loot_table = Array[ExtResource("1_tub8l")]([ExtResource("2_b6wuo")])
+game_speed = 300.0
+loot_table = Array[ExtResource("1_tub8l")]([ExtResource("2_b6wuo"), ExtResource("3_mm6yw"), ExtResource("4_w8y06"), ExtResource("5_mlq8f")])
