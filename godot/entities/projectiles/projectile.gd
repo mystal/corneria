@@ -9,8 +9,8 @@ extends Area2D
 @export var damage: float = 1.0
 
 @export_group("Colors")
-@export var friendly_color: Color = Color.WHITE
-@export var hostile_color: Color = Color.ORANGE_RED
+@export var friendly_color := Color.WHITE
+@export var hostile_color := Color.ORANGE_RED
 
 @onready var lifetime: float = max_range / speed
 
