@@ -22,3 +22,10 @@ enum LootCategory {
 	BASIC,
 	BOSS,
 }
+
+enum FireBehavior {
+	## The Shooter will automatically fire when not on cooldown.
+	AUTO,
+	## The Shooter can request to shoot, limited by its fire rate cooldown.
+	AT_WILL,
+}
