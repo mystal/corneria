@@ -10,7 +10,7 @@ signal picked_up(segment: UpgradeWallSegment)
 
 @export var size: Enums.UpgradeWallSize = Enums.UpgradeWallSize.HALF
 
-var _expired = false
+var _expired := false
 
 func _ready() -> void:
 	_update_visuals()

@@ -30,7 +30,7 @@ func _physics_process(_delta: float) -> void:
 		projectile_shooter.fire()
 
 func _on_hurt_box_area_entered(area: Area2D) -> void:
-	var projectile = area as Projectile
+	var projectile := area as Projectile
 	if projectile and projectile.faction != faction:
 		health.take_damage(projectile.damage)
 		projectile.collided()

@@ -25,7 +25,7 @@ func _physics_process(delta: float) -> void:
 	position.y += Globals.game_speed * delta
 
 func _on_hurt_box_area_entered(area: Area2D) -> void:
-	var projectile = area as Projectile
+	var projectile := area as Projectile
 	if projectile and projectile.faction != faction:
 		health.take_damage(projectile.damage)
 		projectile.collided()
@@ -33,11 +33,11 @@ func _on_hurt_box_area_entered(area: Area2D) -> void:
 func _on_health_died() -> void:
 	# Spawn loot.
 	var loot_upgrade := Globals.pick_loot_for(loot_category)
-	var packed_loot_scene = preload("res://entities/upgrades/upgrade_loot.tscn")
-	var new_loot_scene: UpgradeLoot = packed_loot_scene.instantiate()
+	var packed_loot_scene := preload("res://entities/upgrades/upgrade_loot.tscn")
+	var new_loot_scene := packed_loot_scene.instantiate() as UpgradeLoot
 	new_loot_scene.position = global_position
 	new_loot_scene.upgrade = loot_upgrade
-	get_tree().current_scene.add_child(new_loot_scene)
+	get_tree().current_scene.call_deferred("add_child", new_loot_scene)
 
 	queue_free()
 

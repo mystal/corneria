@@ -40,7 +40,7 @@ func _process(delta: float) -> void:
 func _on_lifetime_timer_timeout() -> void:
 	queue_free()
 
-func collided():
+func collided() -> void:
 	queue_free()
 
 func _on_clean_up_box_clean_up() -> void:

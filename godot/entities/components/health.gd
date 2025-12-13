@@ -17,8 +17,8 @@ func _ready() -> void:
 
 ## Returns how much damage was actually taken.
 func take_damage(amount: float) -> float:
-	var to_take = clamp(amount, 0.0, current)
-	var original_health = current
+	var to_take := clampf(amount, 0.0, current)
+	var original_health := current
 	current -= to_take
 	if to_take > 0.0:
 		health_changed.emit(original_health, current)
@@ -28,8 +28,8 @@ func take_damage(amount: float) -> float:
 
 ## Returns how much health was actually gained.
 func heal(amount: float) -> float:
-	var to_heal = clamp(amount, 0.0, missing())
-	var original_health = current
+	var to_heal := clampf(amount, 0.0, missing())
+	var original_health := current
 	current += to_heal
 	if to_heal > 0.0:
 		health_changed.emit(original_health, current)

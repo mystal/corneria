@@ -23,7 +23,7 @@ func _process(delta: float) -> void:
 	#move_and_slide()
 
 	# Mouse/Touch input
-	var mouse_pos = get_global_mouse_position()
+	var mouse_pos := get_global_mouse_position()
 	# TODO: Figure out how to tune the movement so that we can upgrade the move lerp_speed.
 	root.position = root.position.lerp(mouse_pos, delta * lerp_speed)
 	if top_left_limit and bottom_right_limit:

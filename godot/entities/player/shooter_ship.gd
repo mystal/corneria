@@ -25,7 +25,7 @@ func _physics_process(delta: float) -> void:
 		_fire_cooldown = 1.0 / fire_rate
 
 func _on_hurt_box_area_entered(area: Area2D) -> void:
-	var projectile = area as Projectile
+	var projectile := area as Projectile
 	if projectile and projectile.faction != faction:
 		queue_free()
 		ship_died.emit(self)
